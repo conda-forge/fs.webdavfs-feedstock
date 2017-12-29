@@ -26,6 +26,7 @@ requirements:
     - fs
     - webdavclient2
     - furl
+    - dateutil
 
 test:
   imports:
