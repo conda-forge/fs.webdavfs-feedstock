@@ -28,8 +28,8 @@ requirements:
     - fs
     - webdavclient2
     - furl
-    - python-dateutil 
-
+    - python-dateutil
+    - nose 
 test:
   imports:
     - webdavfs.webdavfs
