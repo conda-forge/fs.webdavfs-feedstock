@@ -23,13 +23,14 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
+    - nose
   run:
     - python
     - fs
     - webdavclient2
     - furl
     - python-dateutil
-    - nose 
 test:
   imports:
     - webdavfs.webdavfs
