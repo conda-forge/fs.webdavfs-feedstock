@@ -1,6 +1,6 @@
 {% set name = "fs.webdavfs" %}
-{% set version = "0.3.5.3" %}
-{% set sha256 = "7b13acfe3116f5bbac4e27339bd37f11cfa969553acfa7d191abf49b465a3efa" %}
+{% set version = "0.3.6" %}
+{% set sha256 = "e41c9695eb5355bcf7dfe2d7ec2b693ffaf314794b111059ea6564890530e3ef" %}
 
 package:
   name: {{ name|lower }}
