@@ -1,6 +1,6 @@
 {% set name = "fs.webdavfs" %}
-{% set version = "0.3.7" %}
-{% set sha256 = "352681e5429e04e902fef976920e6d954f83086c7a544e7d42396b40ea03a568" %}
+{% set version = "0.3.8" %}
+{% set sha256 = "efc9edeb9480b749f3015901c08cf38710c81086f9a3d865e1127db8b6c1e331" %}
 
 package:
   name: {{ name|lower }}
@@ -12,8 +12,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv" 
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -40,9 +40,9 @@ about:
   home: https://github.com/PyFilesystem/webdavfs
   license: MIT
   license_family: MIT
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
-  summary: 'fs.webdavfs is a WebDAV driver for PyFileSystem2.'
-  description: |
+  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE
+  summary: fs.webdavfs is a WebDAV driver for PyFileSystem2.
+  description: |4
 
     Usage:
     ======
