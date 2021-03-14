@@ -1,6 +1,6 @@
 {% set name = "fs.webdavfs" %}
-{% set version = "0.3.5.3" %}
-{% set sha256 = "7b13acfe3116f5bbac4e27339bd37f11cfa969553acfa7d191abf49b465a3efa" %}
+{% set version = "0.4.2" %}
+{% set sha256 = "282ebe9deb752cf071b9d2f6f85675de9cf05aa28b3a05f4689a7aac5637f3ba" %}
 
 package:
   name: {{ name|lower }}
@@ -27,10 +27,10 @@ requirements:
     - nose
   run:
     - python
-    - fs
-    - webdavclient2
-    - furl
+    - fs  >2.0
+    - webdavclient3
     - python-dateutil
+    - cachetools
 test:
   imports:
     - webdavfs.webdavfs
