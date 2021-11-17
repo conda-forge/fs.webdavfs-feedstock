@@ -1,61 +1,49 @@
 {% set name = "fs.webdavfs" %}
 {% set version = "0.4.2" %}
-{% set sha256 = "282ebe9deb752cf071b9d2f6f85675de9cf05aa28b3a05f4689a7aac5637f3ba" %}
+
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.zip
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fs.webdavfs-{{ version }}.zip
+  sha256: 282ebe9deb752cf071b9d2f6f85675de9cf05aa28b3a05f4689a7aac5637f3ba
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv" 
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - python
-    - setuptools
-    - nose
   host:
-    - python
-    - pip
-    - setuptools
     - nose
+    - pip
+    - python >=3.6
   run:
-    - python
-    - fs  >2.0
-    - webdavclient3
-    - python-dateutil
     - cachetools
+    - fs >2.0
+    - python >=3.6
+    - python-dateutil
+    - webdavclient3
+
 test:
   imports:
+    - webdavfs
     - webdavfs.webdavfs
     - webdavfs.opener
+  commands:
+    - pip check
+  requires:
+    - pip
+
 
 about:
   home: https://github.com/PyFilesystem/webdavfs
   license: MIT
   license_family: MIT
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
-  summary: 'fs.webdavfs is a WebDAV driver for PyFileSystem2.'
-  description: |
-
-    Usage:
-    ======
-
-    > from webdavfs.webdavfs import WebDAVFS
-    > url = 'http://zopyx.com:22082'
-    > creds = dict(login='admin', password='admin')
-    > root = '/exist/webdav/db'
-    > handle = WebDAVFS(url, cred, root)
-    > handle.makedir('foo')
-    > print(handle.listdir('.'))
-    ....
-
+  license_file: LICENSE
+  summary: WebDAV support for pyfilesystem2
   doc_url: https://github.com/PyFilesystem/webdavfs
   dev_url: https://github.com/PyFilesystem/webdavfs
 
