@@ -1,5 +1,5 @@
 {% set name = "fs.webdavfs" %}
-{% set version = "0.4.2" %}
+{% set version = "0.4.3.1" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fs.webdavfs-{{ version }}.zip
-  sha256: 282ebe9deb752cf071b9d2f6f85675de9cf05aa28b3a05f4689a7aac5637f3ba
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fs.webdavfs-{{ version }}.tar.gz
+  sha256: a193ca5d348d238c42f78fa842527d48799842d8c0cf7b2a76d473d54f38a757
 
 build:
   number: 0
